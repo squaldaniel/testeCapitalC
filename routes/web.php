@@ -30,9 +30,7 @@ Route::prefix('clientes/')->group(function(){
         $request = new App\Http\Controllers\ClientesController;
         return $request->edit($id);
     });
-    Route::get('del', function(){
-        return 'add!';
-    });
+    Route::get('del/{id}', [App\Http\Controllers\ClientesController::class, 'destroy']);
     Route::get('view/{id}', function($id){
         return $id;
     });

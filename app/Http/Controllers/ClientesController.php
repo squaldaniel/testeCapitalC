@@ -14,7 +14,7 @@ class ClientesController extends Controller
      */
     public function index()
     {
-        $clients = DB::table('clientes')->simplePaginate(7);
+        $clients = DB::table('clientes')->where('ativo', 1)->simplePaginate(7);
 
         return view('bootstrap.online.clientes', ['title'=>'Clientes', 'clientes'=>$clients]);
     }
@@ -27,11 +27,11 @@ class ClientesController extends Controller
         $newClient = ClientesModel::create([$request->post(),
             'nome'=>$request->post('nome'),
             'email'=>$request->post('email'),
-            'cpf'=>$request->post('cpf'),
+            'cpf'=>str_replace(['.', '-'], '', $request->post('cpf')),
             'nascimento'=>$request->post('nascimento'),
             'cidade'=>$request->post('cidade'),
             'estado'=>$request->post('estado'),
-            'cep'=>$request->post('cep'),
+            'cep'=>str_replace(['.', '-'], '', $request->post('cep')),
             'rua'=>$request->post('rua'),
             'sexo'=>$request->post('sexo'),
             'num_compl'=>$request->post('num_compl')
@@ -71,10 +71,20 @@ class ClientesController extends Controller
      */
     public function update(Request $request)
     {
-        //$request->post()[] = null;
-        //dd($request->post());
-        ClientesModel::where('id', $request->input('id'))->update([$request->post()]);
-        return $request;
+        $Client = ClientesModel::where('id', $request->input('id'))->update([
+            "nome"=>$request->input("nome"),
+            "email"=>$request->input("email"),
+            "cpf"=>$request->input("cpf"),
+            "nascimento"=>$request->input("nascimento"),
+            "cep"=>$request->input("cep"),
+            "sexo"=>$request->input("sexo"),
+            "rua"=>$request->input("rua"),
+            "num_compl"=>$request->input("num_compl"),
+            "cidade"=>$request->input("cidade"),
+            "estado"=>$request->input("estado")
+        ]);
+
+        return redirect()->to('clientes/edit/'.$request->input('id'));
     }
 
     /**
@@ -82,7 +92,8 @@ class ClientesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $client = ClientesModel::find($id)->update(['ativo' => 0]);
+        return redirect()->back();
     }
     public function createForm()
     {

@@ -25,7 +25,7 @@
                     <td>{{$cliente->sexo}}</td>
                     <td>
                         <a class="btn btn-primary" href="clientes/edit/{{$cliente->id}}"><span class="fa fa-pencil"></span></button>
-                            <a class="btn btn-danger" href="clientes/del/{{$cliente->id}}"><span class="fa fa-trash"></span></button>
+                            <a class="btn btn-danger" onclick="confirmAndRedirect(event, 'deseja realmente executar esta ação?', 'clientes/del/{{$cliente->id}}')" href="clientes/del/{{$cliente->id}}"><span class="fa fa-trash"></span></button>
                     </td>
                 </tr>
             @endforeach
@@ -39,5 +39,13 @@
 <script type="text/javascript">
     $('.cpfmask').mask('999.999.999-99');
     $('.cepmask').mask('99999-999');
+    function confirmAndRedirect(event, message, url) {
+        event.preventDefault();
+        if (confirm(message)) {
+            window.location.href = url;
+        } else {
+            return false;
+        }
+    }
 </script>
 @endsection

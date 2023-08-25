@@ -92,7 +92,7 @@ function getCep(cep){
             {
                 var obj = jQuery.parseJSON(data);
                 if (obj.erro !== undefined){
-                    alert('O cep não Consta no ViaCEP!');
+                    alert('O cep não consta no ViaCEP!');
                 } else {
                     $("#bairro").val(obj.bairro);
                     $("#rua").val(obj.logradouro);
