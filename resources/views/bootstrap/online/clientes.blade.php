@@ -7,7 +7,7 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <td>Nome</td><td>E-mail</td><td>CPF</td><td>Nasc.</td><td>CEP</td><td>Sexo</td>
+                <td>Nome</td><td>E-mail</td><td>CPF</td><td>Nasc.</td><td>CEP</td><td>Sexo</td><td>Ações</td>
             </tr>
         </thead>
         <tbody>
@@ -19,10 +19,14 @@
                     <td>{{$cliente->nascimento}}</td>
                     <td>{{$cliente->cep}}</td>
                     <td>{{$cliente->sexo}}</td>
+                    <td>
+                        <a class="btn btn-primary" href="clientes/edit/{{$cliente->id}}"><span class="fa fa-pencil"></span></button>
+                            <a class="btn btn-danger" href="clientes/del/{{$cliente->id}}"><span class="fa fa-trash"></span></button>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
-  {{ $clientes->links() }}
+  {{ $clientes->links(null, ["Next"=>"proximo"]) }}
 </div>
 @endsection

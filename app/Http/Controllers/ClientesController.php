@@ -12,7 +12,7 @@ class ClientesController extends Controller
      */
     public function index()
     {
-        $clients = DB::table('clientes')->simplePaginate(10);
+        $clients = DB::table('clientes')->simplePaginate(7);
 
         return view('bootstrap.online.clientes', ['title'=>'Clientes', 'clientes'=>$clients]);
     }
@@ -22,7 +22,7 @@ class ClientesController extends Controller
      */
     public function create()
     {
-        //
+        return view('bootstrap.online.addcliente', ['title'=>'Adicionar Clientes']);
     }
 
     /**
@@ -63,5 +63,9 @@ class ClientesController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+    public function createForm()
+    {
+        return view('bootstrap.online.addcliente', ['title'=>'Adicionar Clientes']);
     }
 }

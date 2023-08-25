@@ -4,8 +4,8 @@
           <span class="fs-4">Capital Consig</span>
         </a>
         <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-          <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/cliente/add">Novo Cliente</a>
-          <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/cliente/edit">Editar Cliente</a>
+          <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/clientes/add">Novo Cliente</a>
+          <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/clientes/edit">Editar Cliente</a>
         </nav>
       </div>
     </div>

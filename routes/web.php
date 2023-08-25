@@ -22,14 +22,15 @@ Route::get('on', [App\Http\Controllers\OnlineController::class, 'index'])->name(
 //# Rotas relacionado ações com Clientes
 Route::prefix('clientes/')->group(function(){
     Route::get('/', [App\Http\Controllers\ClientesController::class, 'index'])->name('clientes');
-    Route::get('add', function(){
-        return 'add!';
-    });
-    Route::get('edit', function(){
-        return 'add!';
+    Route::get('add',[App\Http\Controllers\ClientesController::class, 'createForm']);
+    Route::get('edit/{id}', function($id){
+        return $id;
     });
     Route::get('del', function(){
         return 'add!';
+    });
+    Route::get('view/{id}', function($id){
+        return $id;
     });
 
 });
