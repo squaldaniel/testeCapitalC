@@ -6,7 +6,7 @@
         </a>
         <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
             <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/clientes/addform">
-                <span class="fa fa-user-plus"></span>Novo Clientes
+                <span class="fa fa-user-plus"></span>Novo Cliente
             </a>
             <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/clientes">
                 <span class="fa fa-list"></span>Listar Clientes

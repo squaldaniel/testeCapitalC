@@ -20,12 +20,12 @@
                     <td>{{$cliente->nome}}</td>
                     <td>{{strtolower($cliente->email)}}</td>
                     <td class="cpfmask">{{$cliente->cpf}}</td>
-                    <td>{{ Carbon\Carbon::parse($cliente->nascimento)->format('d/m/Y')}}</td>
+                    <td>{{Carbon\Carbon::parse($cliente->nascimento)->format('d/m/Y') }} </td>
                     <td class="cepmask">{{$cliente->cep}}</td>
                     <td>{{$cliente->sexo}}</td>
                     <td>
                         <a class="btn btn-primary" href="clientes/edit/{{$cliente->id}}"><span class="fa fa-pencil"></span></button>
-                            <a class="btn btn-danger" onclick="confirmAndRedirect(event, 'deseja realmente executar esta ação?', 'clientes/del/{{$cliente->id}}')" href="clientes/del/{{$cliente->id}}"><span class="fa fa-trash"></span></button>
+                        <a class="btn btn-danger" onclick="confirmAndRedirect(event, 'deseja realmente executar esta ação?', 'clientes/del/{{$cliente->id}}')" href="clientes/del/{{$cliente->id}}"><span class="fa fa-trash"></span></button>
                     </td>
                 </tr>
             @endforeach
