@@ -10,10 +10,14 @@ class OnlineController extends Controller
     {
         $quantMan = ClientesModel::where('sexo', 'M')->count();
         $quantwoman = ClientesModel::where('sexo', 'F')->count();
+        $totalclients = ClientesModel::count();
+        $inativeclients = ClientesModel::where('ativo', 0)->count();
         return view('bootstrap.online.on_index', [
             'title'=>'Online',
             'man'=>$quantMan,
-            'woman'=>$quantwoman
+            'woman'=>$quantwoman,
+            'totalclients'=>$totalclients,
+            'inativeclients'=>$inativeclients
         ]);
     }
 }

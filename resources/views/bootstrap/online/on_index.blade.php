@@ -17,7 +17,6 @@
             <!-- charts -->
             <div id="piechart" style="width: 400px; height: 300px;"></div>
             <!-- charts -->
-          <button type="button" class="w-100 btn btn-lg btn-outline-primary"><span class="fa fa-user"> </span>+Novo</button>
         </div>
       </div>
 
@@ -26,46 +25,21 @@
       <nav class="col-lg-8">
         <ul class="list-unstyled d-flex flex-column gap-2">
           <li>
-            <a href="#" class="btn btn-hover-light rounded-2 d-flex align-items-start gap-2 py-2 px-3 lh-sm text-start">
-              <svg class="bi" width="24" height="24"><use xlink:href="#image-fill"></use></svg>
+              <span class="fa fa-group fa-2x"></span>
               <div>
-                <strong class="d-block">Main product</strong>
-                <small>Take a tour through the product</small>
+                <strong class="d-block">Clientes Ativos</strong>
+                <strong>{{$totalclients}}</strong> <small>Clentes</small>
               </div>
-            </a>
           </li>
           <li>
-            <a href="#" class="btn btn-hover-light rounded-2 d-flex align-items-start gap-2 py-2 px-3 lh-sm text-start">
-              <svg class="bi" width="24" height="24"><use xlink:href="#music-note-beamed"></use></svg>
+            <span class="fa fa-frown-o fa-2x"></span>
               <div>
-                <strong class="d-block">Another product</strong>
-                <small>Explore this other product we offer</small>
+                <strong class="d-block">Clientes Inativos</strong>
+                <strong>{{$inativeclients}}</> <small> Clentes</small>
               </div>
-            </a>
-          </li>
-          <li>
-            <a href="#" class="btn btn-hover-light rounded-2 d-flex align-items-start gap-2 py-2 px-3 lh-sm text-start">
-              <svg class="bi" width="24" height="24"><use xlink:href="#question-circle"></use></svg>
-              <div>
-                <strong class="d-block">Support</strong>
-                <small>Get help from our support crew</small>
-              </div>
-            </a>
           </li>
         </ul>
       </nav>
-      <div class="d-none d-lg-block vr mx-4 opacity-10">&nbsp;</div>
-      <hr class="d-lg-none">
-      <div class="col-lg-auto pe-3">
-        <nav>
-          <ul class="d-flex flex-column gap-2 list-unstyled small">
-            <li><a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">Documentation</a></li>
-            <li><a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">Use cases</a></li>
-            <li><a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">API status</a></li>
-            <li><a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">Partners</a></li>
-            <li><a href="#" class="link-offset-2 link-underline link-underline-opacity-25 link-underline-opacity-75-hover">Resources</a></li>
-          </ul>
-        </nav>
       </div>
     </div>
   </div>
@@ -84,7 +58,7 @@
         ['Mulheres', {{$woman}}]
       ]);
       var options = {
-        title: 'Gênero Clientes'
+        title: 'Gênero Clientes ativos'
       };
 
       var chart = new google.visualization.PieChart(document.getElementById('piechart'));
