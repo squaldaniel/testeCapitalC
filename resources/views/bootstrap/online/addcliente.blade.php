@@ -5,7 +5,8 @@
 @section('body')
     <div class="container-fluid">
         <!-- container -->
-        <form class="row g-3" method="POST" action="" style="margin: 15px">
+        <form class="row g-3" method="POST" action="/clientes/add" style="margin: 15px">
+            @csrf
             <div class="col-md-6">
               <label for="nome" class="form-label">Nome:</label>
               <input type="text" class="form-control" id="nome" name="nome" required>
@@ -44,39 +45,24 @@
                 <input class="form-check-input" type="radio" name="sexo" value="F">
                 </div>
               </div>
-            <div class="col-6">
+            <div class="col-4">
               <label for="inputAddress" class="form-label">Rua:</label>
-              <input type="text" class="form-control" id="rua" name="rua">
+              <input type="text" class="form-control" id="rua" name="rua" required>
             </div>
             <div class="col-1">
-              <label for="inputAddress2" class="form-label">Numero:</label>
-              <input type="text" class="form-control" id="inputAddress2" >
-            </div>
-            <div class="col-md-6">
-              <label for="inputCity" class="form-label">City</label>
-              <input type="text" class="form-control" id="inputCity">
-            </div>
-            <div class="col-md-4">
-              <label for="inputState" class="form-label">State</label>
-              <select id="inputState" class="form-select">
-                <option selected>Choose...</option>
-                <option>...</option>
-              </select>
+              <label for="num_compl" class="form-label">Numero:</label>
+              <input type="text" class="form-control" id="num_compl" name="num_compl" required>
             </div>
             <div class="col-md-2">
-              <label for="inputZip" class="form-label">Zip</label>
-              <input type="text" class="form-control" id="inputZip">
+              <label for="cidade" class="form-label">Cidade:</label>
+              <input type="text" class="form-control" id="cidade" name="cidade" required>
+            </div>
+            <div class="col-md-1">
+              <label for="estado" class="form-label">Estado(UF)</label>
+              <input type="text" class="form-control" id="estado" name="estado" required>
             </div>
             <div class="col-12">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                  Check me out
-                </label>
-              </div>
-            </div>
-            <div class="col-12">
-              <button type="submit" class="btn btn-primary">Sign in</button>
+              <input type="submit" class="btn btn-primary" value="Cadastrar">
             </div>
           </form>
         <!-- container -->

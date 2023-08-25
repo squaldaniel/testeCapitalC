@@ -1,6 +1,8 @@
 <?php
 
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,9 +24,11 @@ Route::get('on', [App\Http\Controllers\OnlineController::class, 'index'])->name(
 //# Rotas relacionado ações com Clientes
 Route::prefix('clientes/')->group(function(){
     Route::get('/', [App\Http\Controllers\ClientesController::class, 'index'])->name('clientes');
-    Route::get('add',[App\Http\Controllers\ClientesController::class, 'createForm']);
+    Route::get('addform',[App\Http\Controllers\ClientesController::class, 'createForm']);
+    Route::post('add',[App\Http\Controllers\ClientesController::class, 'create']);
     Route::get('edit/{id}', function($id){
-        return $id;
+        $request = new App\Http\Controllers\ClientesController;
+        return $request->edit($id);
     });
     Route::get('del', function(){
         return 'add!';
@@ -32,6 +36,7 @@ Route::prefix('clientes/')->group(function(){
     Route::get('view/{id}', function($id){
         return $id;
     });
+    Route::post('update/{id}', [App\Http\Controllers\ClientesController::class, 'update']);
 
 });
 
