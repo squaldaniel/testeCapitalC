@@ -10,7 +10,7 @@
     @section('headscripts')
     @show
   </head>
-  <body>
+  <body style=" background-image: linear-gradient(to bottom, #dfe5ea, #FFFFFF) !important;">
     @section("head")
     @show
     @section("body")

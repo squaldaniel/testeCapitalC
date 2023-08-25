@@ -20,10 +20,8 @@ class AuthController extends Controller
         if($user == 1){
             $user = UsersModel::where('passwd', self::cryptin($request->post('mail'), $request->post('passwd')) )
                 ->where('active', 1)->where('email', $request->post('mail'))->get();
-                Session::put([
-                    'user_id'=>$user[0]->id,
-                    'email'=>$user[0]->email
-                ]);
+                    $_SESSION['user_id'] = $user[0]->id;
+                    $_SESSION['email'] = $user[0]->email;
             return redirect()->route('on');
             } else {
                 return redirect()->back();

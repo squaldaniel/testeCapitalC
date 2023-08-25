@@ -6,6 +6,7 @@
         <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
           <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/clientes/addform">Novo Cliente</a>
           <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="/clientes">Listar Cliente</a>
+          <a href="/logout"><button style="margin:5px" class='btn btn-danger'><span class='fa fa-power-off'></span></button></a>
         </nav>
       </div>
     </div>
