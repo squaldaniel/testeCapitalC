@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Session;
 
 Route::get('/', function () {
     if (empty($_SESSION['email'])){
-        return view('bootstrap.offline.login');
+        // return view('bootstrap.offline.login');
+        return view('impact.index');
     }
     return redirect()->to('on');
     })->name('index');
