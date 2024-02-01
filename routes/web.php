@@ -1,8 +1,9 @@
 <?php
 
+use GuzzleHttp\Psr7\Message;
 use GuzzleHttp\Psr7\Request;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Session;
+use App\Http\Controllers\LeadsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,3 +59,5 @@ Route::get('logout', function(){
             return redirect()->to('/');
             }
 });
+
+Route::post('/forms/contact', [LeadsController::class, 'store']);

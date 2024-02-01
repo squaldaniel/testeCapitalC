@@ -22,7 +22,6 @@
                 <ul>
                   <li><i class="bi bi-check-circle-fill"></i> Em parcerias empresariais.</li>
                   <li><i class="bi bi-check-circle-fill"></i> A colaboração é a chave.</li>
-                  <li><i class="bi bi-check-circle-fill"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
                 </ul>
                 <p>
                   Com cada parceiro contribuindo com sua expertise para alcançar objetivos compartilhados. A busca por sinergias não apenas aumenta a eficiência operacional, mas também promove um ambiente de trabalho positivo.
