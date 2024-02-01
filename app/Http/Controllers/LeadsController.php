@@ -34,7 +34,6 @@ class LeadsController extends Controller
         try {
             LeadsModel::create($request->all());
         } catch (\Throwable $th) {
-            //throw
             if($th->getCode() == '23000'){
                 return redirect()->back()->with('error', 'Esse email já está cadastrado. aguarde o contato');
             }

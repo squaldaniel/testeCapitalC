@@ -23,6 +23,9 @@ Route::get('/', function () {
     }
     return redirect()->to('on');
     })->name('index');
+Route::get('painel', function(){
+    return view('bootstrap.offline.login');
+});
 
 Route::post('auth', [App\Http\Controllers\AuthController::class, 'authlogin']);
 
