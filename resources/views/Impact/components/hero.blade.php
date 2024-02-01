@@ -7,7 +7,7 @@
           <p>Estamos ansiosos para ser seu parceiro de negócios.</p>
           <div class="d-flex justify-content-center justify-content-lg-start">
             <a href="#about" class="btn-get-started">Sobre nós</a>
-            <a href="https://www.youtube.com/watch?v=TZAIlRj_elw" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+            <a href="https://www.youtube.com/watch?v=TZAIlRj_elw" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>O quê é CRM</span></a>
           </div>
         </div>
         <div class="col-lg-6 order-1 order-lg-2">
